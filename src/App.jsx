@@ -1,13 +1,16 @@
-import { useState } from 'react'
-import Todo from './components/Todo'
+import { Main, Todo, CardETH } from '.'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="border border-white rounded-md p-10 ml-10">
-      <Todo />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />}>
+          <Route path="todos" element={<Todo />} />
+          <Route path="card-eth" element={<CardETH />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
